@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+coverage/
+dist-ssr/
+*.tsbuildinfo
+frontend/.vite/
+frontend/.vite-temp/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+.temp/
+.tmp/
+*.local
+
+# Runtime data
+pids/
+*.pid
+*.pid.lock
+*.seed
+
+# Coverage and diagnostics
+.nyc_output/
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# OS files
+.DS_Store
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
