@@ -3,10 +3,20 @@ import './App.css'
 
 const translations = {
   ru: {
-    localeLabel: 'Русский',
+    localeLabel: 'Язык',
+    themeLabel: 'Тема',
+    planLabel: 'Тариф',
     languages: {
       ru: 'RU',
       en: 'EN',
+    },
+    themes: {
+      light: 'Light',
+      dark: 'Dark',
+    },
+    plans: {
+      free: 'Free',
+      premium: 'Premium',
     },
     topbarTag: 'AI-инструмент для рекрутеров',
     heroEyebrow: 'CV-maker для рекрутеров',
@@ -24,8 +34,8 @@ const translations = {
         text: 'Без CRM и сложной HR-логики, только быстрая сборка CV.',
       },
       {
-        title: 'Готов к росту',
-        text: 'Подходит для web-версии и будущей desktop-сборки на Electron.',
+        title: 'Premium-расширение',
+        text: 'Кастомные промпты для рекрутеров, которым нужен свой формат подачи.',
       },
     ],
     outputPreviewAria: 'Предпросмотр результата',
@@ -40,17 +50,21 @@ const translations = {
       'Образование',
       'Языки',
     ],
-    selectedPrompt: 'Выбранный промпт',
+    selectedPrompt: 'Активный режим промпта',
     recruitersGet: 'Что получает рекрутер',
     recruiterSignals: [
       'Сырые заметки, LinkedIn и файл в одном сценарии',
       'Пресеты промптов под разные клиентские запросы',
-      'Структурированный результат без ручной чистки',
+      'Premium-режим с кастомной инструкцией под конкретного клиента',
     ],
     workspaceEyebrow: 'Рабочая зона MVP',
     workspaceTitle: 'Соберите запрос на генерацию',
     workspaceNote:
-      'Сейчас можно выбирать пресет, а позже заменить его на вашу собственную библиотеку промптов.',
+      'Сейчас можно работать с готовыми пресетами, а в Premium переключаться на собственный кастомный промпт.',
+    planFreeNote:
+      'В Free доступны готовые пресеты. Кастомный промпт заблокирован до Premium.',
+    planPremiumNote:
+      'В Premium можно писать собственный промпт и адаптировать результат под клиента.',
     inputLabel: 'Ввод',
     candidateSourceTitle: 'Исходные данные кандидата',
     candidateInformation: 'Информация о кандидате',
@@ -67,18 +81,37 @@ const translations = {
     vacancyInstructions: 'Описание вакансии или инструкции',
     vacancyPlaceholder:
       'Добавьте описание вакансии, ожидания клиента, желаемый тон или правила оформления CV.',
+    customPromptEyebrow: 'Premium feature',
+    customPromptTitle: 'Свой кастомный промпт',
+    customPromptFieldLabel: 'Текст кастомного промпта',
+    customPromptPlaceholder:
+      'Например: сделай CV более executive-style, усили достижения цифрами, выдели международный опыт и адаптируй тон под клиента.',
+    customPromptEnabledText:
+      'Ваш кастомный промпт будет дополнять или полностью заменять выбранный пресет при генерации.',
+    customPromptLockedText:
+      'Создание собственного промпта доступно только в Premium-плане.',
+    customPromptUpgradeHint:
+      'После апгрейда можно хранить и использовать индивидуальные шаблоны под разных клиентов.',
+    customPromptActiveLabel: 'Кастомный промпт',
+    customPromptSummary: 'Используется собственная инструкция.',
+    presetPromptLabel: 'Пресет',
     generate: 'Сгенерировать CV',
-    createPrompt: 'Создать свой промпт',
+    savePromptTemplate: 'Сохранить шаблон',
+    unlockPremium: 'Открыть Premium',
     liveSummary: 'Живая сводка',
     requestOverview: 'Обзор текущего запроса',
     currentSetup: 'Текущая конфигурация',
+    planCurrentLabel: 'Тариф',
     promptLabel: 'Промпт',
+    promptModeLabel: 'Режим',
+    customPromptLabel: 'Кастомный промпт',
     candidateTextLabel: 'Текст кандидата',
     attachedFileLabel: 'Файл',
     extraInstructionsLabel: 'Инструкции',
     notAddedYet: 'Пока не добавлено',
     noFileSelected: 'Файл не выбран',
     noneYet: 'Пока нет',
+    disabledForFree: 'Недоступно на Free',
     promptBehavior: 'Поведение промпта',
     idealOutput: 'Каким должен быть результат',
     idealOutputSteps: [
@@ -110,10 +143,20 @@ const translations = {
     ],
   },
   en: {
-    localeLabel: 'English',
+    localeLabel: 'Language',
+    themeLabel: 'Theme',
+    planLabel: 'Plan',
     languages: {
       ru: 'RU',
       en: 'EN',
+    },
+    themes: {
+      light: 'Light',
+      dark: 'Dark',
+    },
+    plans: {
+      free: 'Free',
+      premium: 'Premium',
     },
     topbarTag: 'AI tool for recruiters',
     heroEyebrow: 'CV-maker for recruiters',
@@ -131,8 +174,8 @@ const translations = {
         text: 'No CRM complexity, just fast CV creation for recruiters.',
       },
       {
-        title: 'Ready to scale',
-        text: 'Works for the web now and can later be packaged in Electron.',
+        title: 'Premium expansion',
+        text: 'Custom prompts for recruiters who need their own delivery format.',
       },
     ],
     outputPreviewAria: 'Output preview',
@@ -147,17 +190,21 @@ const translations = {
       'Education',
       'Languages',
     ],
-    selectedPrompt: 'Selected prompt',
+    selectedPrompt: 'Active prompt mode',
     recruitersGet: 'What recruiters get',
     recruiterSignals: [
       'Raw notes, LinkedIn copy, and file upload in one flow',
       'Prompt presets for different client formats',
-      'Structured output ready to send without manual cleanup',
+      'Premium mode with custom instructions for a specific client',
     ],
     workspaceEyebrow: 'MVP workspace',
     workspaceTitle: 'Compose the generation request',
     workspaceNote:
-      'You can choose a preset now and replace it later with your own prompt library.',
+      'You can work with ready-made presets now and switch to your own custom prompt in Premium.',
+    planFreeNote:
+      'Free includes prompt presets. Custom prompt creation is locked until Premium.',
+    planPremiumNote:
+      'Premium lets you write your own prompt and adapt the result for each client.',
     inputLabel: 'Input',
     candidateSourceTitle: 'Candidate source data',
     candidateInformation: 'Candidate information',
@@ -174,18 +221,37 @@ const translations = {
     vacancyInstructions: 'Vacancy description or instructions',
     vacancyPlaceholder:
       'Add job description, client expectations, desired tone, or formatting rules for this CV.',
+    customPromptEyebrow: 'Premium feature',
+    customPromptTitle: 'Custom prompt',
+    customPromptFieldLabel: 'Custom prompt text',
+    customPromptPlaceholder:
+      'For example: make the CV feel more executive, amplify quantified impact, highlight international exposure, and adapt the tone for the client.',
+    customPromptEnabledText:
+      'Your custom prompt will complement or replace the selected preset during generation.',
+    customPromptLockedText:
+      'Creating your own prompt is available only on the Premium plan.',
+    customPromptUpgradeHint:
+      'After upgrading, you can keep tailored templates for different clients and roles.',
+    customPromptActiveLabel: 'Custom prompt',
+    customPromptSummary: 'A personal instruction is currently active.',
+    presetPromptLabel: 'Preset',
     generate: 'Generate CV',
-    createPrompt: 'Create custom prompt',
+    savePromptTemplate: 'Save template',
+    unlockPremium: 'Unlock Premium',
     liveSummary: 'Live summary',
     requestOverview: 'Request overview',
     currentSetup: 'Current setup',
+    planCurrentLabel: 'Plan',
     promptLabel: 'Prompt',
+    promptModeLabel: 'Mode',
+    customPromptLabel: 'Custom prompt',
     candidateTextLabel: 'Candidate text',
     attachedFileLabel: 'Attached file',
     extraInstructionsLabel: 'Instructions',
     notAddedYet: 'Not added yet',
     noFileSelected: 'No file selected',
     noneYet: 'None yet',
+    disabledForFree: 'Unavailable on Free',
     promptBehavior: 'Prompt behavior',
     idealOutput: 'Ideal output',
     idealOutputSteps: [
@@ -239,24 +305,54 @@ function formatWords(locale, count) {
   return `${count} ${count === 1 ? 'word' : 'words'}`
 }
 
+function getInitialTheme() {
+  if (typeof window === 'undefined') {
+    return 'light'
+  }
+
+  const storedTheme = window.localStorage.getItem('cv-maker-theme')
+
+  if (storedTheme === 'light' || storedTheme === 'dark') {
+    return storedTheme
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
+
 function App() {
   const [locale, setLocale] = useState('ru')
+  const [theme, setTheme] = useState(getInitialTheme)
+  const [plan, setPlan] = useState('free')
   const [selectedPrompt, setSelectedPrompt] = useState('clean')
   const [candidateText, setCandidateText] = useState('')
   const [jobNotes, setJobNotes] = useState('')
+  const [customPrompt, setCustomPrompt] = useState('')
   const [selectedFile, setSelectedFile] = useState(null)
 
   const t = translations[locale]
-  const activePrompt =
+  const activePreset =
     t.promptPresets.find((prompt) => prompt.id === selectedPrompt) ?? t.promptPresets[0]
   const candidateWords = candidateText.trim()
     ? candidateText.trim().split(/\s+/).length
     : 0
   const extraContextWords = jobNotes.trim() ? jobNotes.trim().split(/\s+/).length : 0
+  const customPromptWords = customPrompt.trim() ? customPrompt.trim().split(/\s+/).length : 0
+  const isCustomPromptActive = plan === 'premium' && customPromptWords > 0
+  const activePromptTitle = isCustomPromptActive
+    ? t.customPromptActiveLabel
+    : activePreset.label
+  const activePromptDescription = isCustomPromptActive
+    ? `${t.customPromptSummary} ${formatWords(locale, customPromptWords)}.`
+    : activePreset.description
 
   useEffect(() => {
     document.documentElement.lang = locale
   }, [locale])
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    window.localStorage.setItem('cv-maker-theme', theme)
+  }, [theme])
 
   return (
     <main className="app-shell">
@@ -269,17 +365,32 @@ function App() {
           </div>
         </div>
 
-        <div className="locale-switch" aria-label={t.localeLabel}>
-          {Object.entries(t.languages).map(([langCode, label]) => (
-            <button
-              key={langCode}
-              type="button"
-              className={langCode === locale ? 'locale-button active' : 'locale-button'}
-              onClick={() => setLocale(langCode)}
-            >
-              {label}
-            </button>
-          ))}
+        <div className="control-cluster">
+          <div className="toggle-group" aria-label={t.themeLabel}>
+            {Object.entries(t.themes).map(([themeCode, label]) => (
+              <button
+                key={themeCode}
+                type="button"
+                className={themeCode === theme ? 'toggle-button active' : 'toggle-button'}
+                onClick={() => setTheme(themeCode)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <div className="toggle-group" aria-label={t.localeLabel}>
+            {Object.entries(t.languages).map(([langCode, label]) => (
+              <button
+                key={langCode}
+                type="button"
+                className={langCode === locale ? 'toggle-button active' : 'toggle-button'}
+                onClick={() => setLocale(langCode)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -319,8 +430,8 @@ function App() {
           <div className="preview-stack">
             <div className="preview-card">
               <p className="mini-label">{t.selectedPrompt}</p>
-              <strong>{activePrompt.label}</strong>
-              <p>{activePrompt.description}</p>
+              <strong>{activePromptTitle}</strong>
+              <p>{activePromptDescription}</p>
             </div>
             <div className="preview-card">
               <p className="mini-label">{t.recruitersGet}</p>
@@ -340,7 +451,28 @@ function App() {
             <p className="eyebrow">{t.workspaceEyebrow}</p>
             <h2>{t.workspaceTitle}</h2>
           </div>
-          <p className="workspace-note">{t.workspaceNote}</p>
+
+          <div className="workspace-tools">
+            <p className="workspace-note">{t.workspaceNote}</p>
+            <div className="plan-card">
+              <p className="mini-label">{t.planLabel}</p>
+              <div className="toggle-group compact">
+                {Object.entries(t.plans).map(([planCode, label]) => (
+                  <button
+                    key={planCode}
+                    type="button"
+                    className={planCode === plan ? 'toggle-button active' : 'toggle-button'}
+                    onClick={() => setPlan(planCode)}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              <p className="helper-text">
+                {plan === 'premium' ? t.planPremiumNote : t.planFreeNote}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="workspace-grid">
@@ -397,6 +529,48 @@ function App() {
               </div>
             </div>
 
+            <section
+              className={plan === 'premium' ? 'premium-card active' : 'premium-card locked'}
+              aria-labelledby="premium-title"
+            >
+              <div className="premium-header">
+                <div>
+                  <p className="mini-label">{t.customPromptEyebrow}</p>
+                  <h3 id="premium-title">{t.customPromptTitle}</h3>
+                </div>
+                <span className="premium-badge">{t.plans[plan]}</span>
+              </div>
+
+              <p className="premium-text">
+                {plan === 'premium'
+                  ? t.customPromptEnabledText
+                  : t.customPromptLockedText}
+              </p>
+
+              {plan === 'premium' ? (
+                <label className="field">
+                  <span>{t.customPromptFieldLabel}</span>
+                  <textarea
+                    className="textarea-compact premium-textarea"
+                    value={customPrompt}
+                    onChange={(event) => setCustomPrompt(event.target.value)}
+                    placeholder={t.customPromptPlaceholder}
+                  />
+                </label>
+              ) : (
+                <div className="locked-state">
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={() => setPlan('premium')}
+                  >
+                    {t.unlockPremium}
+                  </button>
+                  <span className="helper-text">{t.customPromptUpgradeHint}</span>
+                </div>
+              )}
+            </section>
+
             <label className="field">
               <span>{t.vacancyInstructions}</span>
               <textarea
@@ -411,8 +585,16 @@ function App() {
               <button type="button" className="primary-button">
                 {t.generate}
               </button>
-              <button type="button" className="secondary-button">
-                {t.createPrompt}
+              <button
+                type="button"
+                className="secondary-button"
+                onClick={() => {
+                  if (plan !== 'premium') {
+                    setPlan('premium')
+                  }
+                }}
+              >
+                {plan === 'premium' ? t.savePromptTemplate : t.unlockPremium}
               </button>
             </div>
           </section>
@@ -429,8 +611,26 @@ function App() {
               <p className="mini-label">{t.currentSetup}</p>
               <dl className="summary-list">
                 <div>
+                  <dt>{t.planCurrentLabel}</dt>
+                  <dd>{t.plans[plan]}</dd>
+                </div>
+                <div>
                   <dt>{t.promptLabel}</dt>
-                  <dd>{activePrompt.label}</dd>
+                  <dd>{activePromptTitle}</dd>
+                </div>
+                <div>
+                  <dt>{t.promptModeLabel}</dt>
+                  <dd>{isCustomPromptActive ? t.customPromptActiveLabel : t.presetPromptLabel}</dd>
+                </div>
+                <div>
+                  <dt>{t.customPromptLabel}</dt>
+                  <dd>
+                    {plan === 'premium'
+                      ? customPromptWords > 0
+                        ? formatWords(locale, customPromptWords)
+                        : t.noneYet
+                      : t.disabledForFree}
+                  </dd>
                 </div>
                 <div>
                   <dt>{t.candidateTextLabel}</dt>
@@ -457,8 +657,8 @@ function App() {
 
             <div className="summary-card accent-card">
               <p className="mini-label">{t.promptBehavior}</p>
-              <strong>{activePrompt.tone}</strong>
-              <p>{activePrompt.description}</p>
+              <strong>{isCustomPromptActive ? t.customPromptActiveLabel : activePreset.tone}</strong>
+              <p>{activePromptDescription}</p>
             </div>
 
             <div className="summary-card">

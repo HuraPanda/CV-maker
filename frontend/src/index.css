@@ -1,16 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&family=Rubik:wght@500;600;700;800&display=swap');
 
 :root {
+  color-scheme: light;
   --bg: #f4ede2;
   --bg-deep: #efe4d4;
+  --bg-highlight: rgba(255, 255, 255, 0.72);
   --panel: #fffdf9;
   --text: #5f564d;
   --text-strong: #211d18;
   --muted: #8e7964;
   --border: rgba(73, 57, 39, 0.12);
+  --soft-border: rgba(73, 57, 39, 0.08);
   --accent: #1c624f;
   --accent-2: #f59b52;
+  --accent-ghost: rgba(28, 98, 79, 0.1);
+  --focus-border: rgba(28, 98, 79, 0.35);
+  --focus-ring: rgba(28, 98, 79, 0.12);
   --shadow-soft: 0 18px 45px rgba(73, 57, 39, 0.08);
+  --hero-bg:
+    linear-gradient(135deg, rgba(255, 250, 243, 0.96), rgba(255, 255, 255, 0.9)),
+    #fffdf9;
+  --workspace-bg: rgba(248, 243, 235, 0.68);
+  --card: rgba(255, 255, 255, 0.88);
+  --card-strong: rgba(255, 255, 255, 0.94);
+  --card-soft: rgba(255, 255, 255, 0.7);
+  --card-accent:
+    linear-gradient(180deg, rgba(33, 98, 77, 0.08), rgba(255, 255, 255, 0.95)),
+    rgba(255, 255, 255, 0.92);
+  --toggle-bg: rgba(255, 255, 255, 0.72);
+  --toggle-active: linear-gradient(135deg, rgba(28, 98, 79, 0.12), rgba(245, 155, 82, 0.2));
+  --brand-gradient:
+    linear-gradient(135deg, rgba(28, 98, 79, 0.14), rgba(245, 155, 82, 0.18));
+  --upload-bg:
+    linear-gradient(135deg, rgba(255, 244, 226, 0.88), rgba(255, 255, 255, 0.94));
+  --input-bg: rgba(252, 250, 247, 0.9);
+  --chip-bg: rgba(252, 250, 247, 0.96);
+  --chip-active: rgba(28, 98, 79, 0.08);
+  --summary-bg: rgba(252, 250, 247, 0.92);
+  --summary-accent:
+    linear-gradient(180deg, rgba(255, 169, 94, 0.14), rgba(255, 255, 255, 0.96)),
+    rgba(252, 250, 247, 0.92);
+  --badge-bg: rgba(245, 155, 82, 0.18);
+  --list-item: rgba(255, 255, 255, 0.88);
+  --orb-warm: radial-gradient(circle, rgba(255, 161, 91, 0.35), transparent 72%);
+  --orb-cool: radial-gradient(circle, rgba(28, 98, 79, 0.16), transparent 68%);
+  --button-text: #f8f4ee;
+  --button-shadow: rgba(28, 98, 79, 0.22);
   --sans: 'Nunito Sans', 'Segoe UI', sans-serif;
   --heading: 'Rubik', 'Segoe UI', sans-serif;
 
@@ -18,13 +53,58 @@
   line-height: 1.5;
   font-weight: 400;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 26%),
-    linear-gradient(180deg, var(--bg), var(--bg-deep));
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0d1318;
+  --bg-deep: #111a21;
+  --bg-highlight: rgba(255, 255, 255, 0.05);
+  --panel: #161f27;
+  --text: #c2ccd2;
+  --text-strong: #f2f5f4;
+  --muted: #93a0a7;
+  --border: rgba(160, 176, 187, 0.16);
+  --soft-border: rgba(160, 176, 187, 0.1);
+  --accent: #8dd3bb;
+  --accent-2: #f3ab66;
+  --accent-ghost: rgba(141, 211, 187, 0.14);
+  --focus-border: rgba(141, 211, 187, 0.4);
+  --focus-ring: rgba(141, 211, 187, 0.18);
+  --shadow-soft: 0 22px 52px rgba(0, 0, 0, 0.34);
+  --hero-bg:
+    linear-gradient(135deg, rgba(19, 27, 33, 0.96), rgba(24, 34, 42, 0.92)),
+    #161f27;
+  --workspace-bg: rgba(18, 25, 32, 0.78);
+  --card: rgba(20, 28, 35, 0.9);
+  --card-strong: rgba(18, 25, 32, 0.94);
+  --card-soft: rgba(31, 42, 51, 0.78);
+  --card-accent:
+    linear-gradient(180deg, rgba(141, 211, 187, 0.09), rgba(19, 27, 33, 0.96)),
+    rgba(19, 27, 33, 0.94);
+  --toggle-bg: rgba(18, 25, 32, 0.82);
+  --toggle-active: linear-gradient(135deg, rgba(141, 211, 187, 0.16), rgba(243, 171, 102, 0.2));
+  --brand-gradient:
+    linear-gradient(135deg, rgba(141, 211, 187, 0.16), rgba(243, 171, 102, 0.2));
+  --upload-bg:
+    linear-gradient(135deg, rgba(25, 35, 43, 0.96), rgba(18, 25, 32, 0.94));
+  --input-bg: rgba(11, 16, 21, 0.72);
+  --chip-bg: rgba(18, 25, 32, 0.94);
+  --chip-active: rgba(141, 211, 187, 0.12);
+  --summary-bg: rgba(19, 27, 33, 0.94);
+  --summary-accent:
+    linear-gradient(180deg, rgba(243, 171, 102, 0.12), rgba(19, 27, 33, 0.96)),
+    rgba(19, 27, 33, 0.94);
+  --badge-bg: rgba(243, 171, 102, 0.16);
+  --list-item: rgba(11, 16, 21, 0.7);
+  --orb-warm: radial-gradient(circle, rgba(243, 171, 102, 0.18), transparent 72%);
+  --orb-cool: radial-gradient(circle, rgba(141, 211, 187, 0.18), transparent 68%);
+  --button-text: #08120f;
+  --button-shadow: rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -39,6 +119,10 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, var(--bg-highlight), transparent 26%),
+    linear-gradient(180deg, var(--bg), var(--bg-deep));
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body,
@@ -100,5 +184,5 @@ a {
 }
 
 ::selection {
-  background: rgba(28, 98, 79, 0.18);
+  background: var(--accent-ghost);
 }
